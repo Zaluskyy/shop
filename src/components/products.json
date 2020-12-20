@@ -1,0 +1,67 @@
+{
+    "items":[
+        {
+            "id": 1,
+            "name": "Dark line",
+            "image": "../img/premic_v.jpg",
+            "price": 19.99,
+            "type": "premix"
+        },
+        {
+            "id": 2,
+            "name": "twój stary pjany",
+            "image": "../img/premic_v.jpg",
+            "price": 20.00,
+            "type": "premix"
+        },
+        {
+            "id": 3,
+            "name": "okr",
+            "image": "../img/premic_v.jpg",
+            "price": 11.99,
+            "type": "premix"
+        },
+        {
+            "id": 4,
+            "name": "nwm",
+            "image": "../img/premic_v.jpg",
+            "price": 27.99,
+            "type": "premix"
+        },
+        {
+            "id": 5,
+            "name": "bk",
+            "image": "../img/premic_v.jpg",
+            "price": 22.99,
+            "type": "premix"
+        },
+        {
+            "id": 6,
+            "name": "lolxd",
+            "image": "../img/premic_v.jpg",
+            "price": 42.99,
+            "type": "premix"
+        },
+        {
+            "id": 7,
+            "name": "chj",
+            "image": "../img/premic_v.jpg",
+            "price": 12.99,
+            "type": "premix"
+        },
+        {
+            "id": 8,
+            "name": "ZlauskyPremix",
+            "image": "../img/premic_v.jpg",
+            "price": 89.46,
+            "type": "premix"
+        },
+        {
+            "id": 9,
+            "name": "Dark",
+            "image": "../img/premic_v.jpg",
+            "price": 53.99,
+            "type": "premix"
+        }
+    ]
+}

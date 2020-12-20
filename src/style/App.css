@@ -1,0 +1,398 @@
+.App {
+  min-height: 200vh;
+}
+
+.firstPage{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: greenyellow;
+}
+
+header{
+  background-color: yellow;
+  height: 75px;
+}
+
+.TopPanel{
+  position: relative;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TopPanel img{
+  height: 80%;
+  cursor: pointer;
+}
+
+.menu{
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Langar', cursive;
+}
+
+.menu font{
+  border: 2px solid transparent;
+  transition: .2s;
+  cursor: pointer;
+  /* padding: 10px 20px; */
+}
+
+.menu font:hover{
+  /* color: red; */
+  border-bottom-color: black;
+
+}
+
+.menu2{
+  width: 8vw;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  position: relative;
+}
+
+.menu2 div{
+  padding: 1px;
+  border: 2px solid transparent;
+  color: rgba(0, 0, 0, 0.705);
+  /* cursor: pointer; */
+}
+
+.menu2 div.fai:hover{
+  color: black;
+}
+
+.menu2 .shoppingCart{
+  position: relative;
+}
+
+.menu2 .shoppingCart:hover .shopingCartPlace{
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu2 .shoppingCart span.notificationSpan{
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  background-color: red;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  text-align: center;
+  line-height: 17px;
+}
+
+.menu2 .shoppingCart .shopingCartPlace{
+  position: absolute;
+  right: 0;
+  z-index: 3;
+  width: 450px;
+  min-height: 225px;
+  background-color: rgb(93, 93, 93);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .3s , opacity .3s linear;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* justify-content: center; */
+}
+
+.itemContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  background-color: rgb(178, 178, 187);
+  height: 75px;
+}
+
+.itemContainer .itemName{
+  width: 60%;
+
+}
+.itemContainer .itemPrice{
+  width: 15%;
+  /* background: cadetblue; */
+  border-left: 1px solid grey;
+  text-align: right;
+  padding-right: 5px;
+  
+}
+.itemContainer .itemCount{
+  width: 25%;
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  position: relative;
+}
+
+.itemContainer .itemCount button{
+  color: white;
+  background-color: transparent;
+  border: 1px solid rgb(0, 110, 255);
+  width: 27px;
+  height: 27px;
+  transition: .2s;
+}
+
+.itemContainer .itemCount button:hover{
+  border-color: rgb(0, 68, 156)
+}
+
+.shopingCartPlace .summaryAndBuy button{
+  padding: 10px 20px;
+  background-color: red;
+  border: 2px solid black;
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+
+
+
+
+
+aside{
+  /* background-color: green; */
+  flex-basis: 39.0625vw;
+}
+
+.slider{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider .img{
+  background: url('../img/banner0.jpg');
+  background-size: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: .2s;
+}
+
+.slider .controller{
+  z-index: 2;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider .controller div{
+  width: 10px;
+  height: 10px;
+  border: 5px solid black;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 5px black;
+}
+
+
+
+
+section{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section button{
+  position: relative;
+  background-color: rgb(9, 62, 105);
+  color: white;
+  font-size: 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  width: 150px;
+  height: 75px;
+}
+
+section button font{
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+section button::after{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 146px;
+  height: 71px;
+  border: 2px solid black;
+  border-radius: 10px;
+  transform: translate(2px, -47px);
+  transition: .5s;
+}
+
+section button:hover::after{
+  transform: translate(-8px, -37px);
+}
+
+section button:active::after{
+  border-color: red;
+}
+
+section button::before{
+  content: "Zobacz produkty";
+  position: absolute;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(74, 134, 212);
+  color: transparent;
+  top: 0;
+  left: 0;
+  width: 146px;
+  height: 0;
+  transition: height .3s;
+}
+
+section button:active::after{
+  transition: height .2s;
+  height: 100%;
+}
+
+section button:active::before{
+  /* border-color: white; */
+  /* color: black; */
+  /* background-color: black; */
+}
+
+
+
+
+
+main{
+  min-height: 100vh;
+  background-color: rgb(80, 72, 76);
+}
+
+.productList{
+  padding-top: 10px;
+  background-color: rgb(216, 69, 69);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(100, 1fr); */
+  /* width: 90vw; */
+  /* margin-left: 5vw; */
+  gap: 50px;
+}
+
+
+.product{
+  grid-column: 2/span 1;
+  /* grid-column: 1/10; */
+  position: relative;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  /* margin: 5px; */
+  border: 2px solid black;
+  z-index: 4;
+}
+
+@media (min-width: 800px){
+  .productList{
+    grid-template-columns: repeat(auto-fit);
+    /* gap: 100px; */
+  }
+
+  .product{
+    width: 200px;
+    height: 250px;
+    grid-column: auto;
+    justify-self: center;
+  }
+}
+@media (min-width: 1100px){
+  .productList{
+    grid-template-columns: repeat(auto-fit);
+    /* gap: 100px; */
+  }
+
+  .product{
+    width: 250px;
+    height: 312.5px;
+    grid-column: auto;
+    justify-self: center;
+  }
+}
+@media (min-width: 1920px){
+  .productList{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product{
+    width: 300px;
+    height: 375px;
+    grid-column: auto;
+    justify-self: center;
+  }
+}
+
+.product .image{
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.product .image img{
+  width: 100%;
+}
+
+.product .description{
+  background: violet;
+  transition: .5s;
+  text-align: center;
+  height: 10%;
+}
+
+.product .price{
+  height: 10%;
+  background: yellow;
+  transition: .5s;
+}
+
+.product button{
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: grey;
+  display: none;
+  outline: none;
+}
