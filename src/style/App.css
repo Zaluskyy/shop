@@ -2,7 +2,7 @@
   min-height: 200vh;
 }
 
-.firstPage{
+.firstPage {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -10,12 +10,17 @@
   background-color: greenyellow;
 }
 
-header{
+header {
   background-color: yellow;
   height: 75px;
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  border-bottom: 2px solid black;
+  transition: 0.2s;
 }
 
-.TopPanel{
+.TopPanel {
   position: relative;
   left: 5%;
   width: 90%;
@@ -25,34 +30,33 @@ header{
   align-items: center;
 }
 
-.TopPanel img{
+.TopPanel img {
   height: 80%;
   cursor: pointer;
 }
 
-.menu{
+.menu {
   width: 50vw;
   height: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  font-family: 'Langar', cursive;
+  font-family: "Langar", cursive;
 }
 
-.menu font{
+.menu font {
   border: 2px solid transparent;
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
   /* padding: 10px 20px; */
 }
 
-.menu font:hover{
+.menu font:hover {
   /* color: red; */
   border-bottom-color: black;
-
 }
 
-.menu2{
+.menu2 {
   width: 8vw;
   display: flex;
   justify-content: space-between;
@@ -60,27 +64,50 @@ header{
   position: relative;
 }
 
-.menu2 div{
+.menu2 div {
   padding: 1px;
   border: 2px solid transparent;
   color: rgba(0, 0, 0, 0.705);
   /* cursor: pointer; */
 }
 
-.menu2 div.fai:hover{
+.menu2 div.fai:hover {
   color: black;
 }
 
-.menu2 .shoppingCart{
+.menu2 .search {
   position: relative;
 }
 
-.menu2 .shoppingCart:hover .shopingCartPlace{
+.menu2 .search .searchProduct {
+  position: absolute;
+  right: 0px;
+  /* width: 450px; */
+  /* background-color: rgba(196, 82, 6, 0.815); */
+  margin: 0;
+  padding: 0;
+}
+
+.menu2 .search .searchProduct input {
+  /* width: 300px; */
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 144);
+  border: 2px solid black;
+  border-radius: 7 px;
+  outline: none;
+  color: rgb(1, 3, 37);
+}
+
+.menu2 .shoppingCart {
+  position: relative;
+}
+
+.menu2 .shoppingCart:hover .shopingCartPlace {
   visibility: visible;
   opacity: 1;
 }
 
-.menu2 .shoppingCart span.notificationSpan{
+.menu2 .shoppingCart span.notificationSpan {
   position: absolute;
   width: 17px;
   height: 17px;
@@ -93,7 +120,7 @@ header{
   line-height: 17px;
 }
 
-.menu2 .shoppingCart .shopingCartPlace{
+.menu2 .shoppingCart .shopingCartPlace {
   position: absolute;
   right: 0;
   z-index: 3;
@@ -102,14 +129,14 @@ header{
   background-color: rgb(93, 93, 93);
   visibility: hidden;
   opacity: 0;
-  transition: visibility .3s , opacity .3s linear;
+  transition: visibility 0.3s, opacity 0.3s linear;
   display: flex;
   flex-direction: column;
   gap: 5px;
   /* justify-content: center; */
 }
 
-.itemContainer{
+.itemContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -118,19 +145,17 @@ header{
   height: 75px;
 }
 
-.itemContainer .itemName{
+.itemContainer .itemName {
   width: 60%;
-
 }
-.itemContainer .itemPrice{
+.itemContainer .itemPrice {
   width: 15%;
   /* background: cadetblue; */
   border-left: 1px solid grey;
   text-align: right;
   padding-right: 5px;
-  
 }
-.itemContainer .itemCount{
+.itemContainer .itemCount {
   width: 25%;
   background-color: black;
   color: aliceblue;
@@ -143,56 +168,55 @@ header{
   position: relative;
 }
 
-.itemContainer .itemCount button{
+.itemContainer .itemCount button {
   color: white;
   background-color: transparent;
   border: 1px solid rgb(0, 110, 255);
   width: 27px;
   height: 27px;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.itemContainer .itemCount button:hover{
-  border-color: rgb(0, 68, 156)
+.itemContainer .itemCount button:hover {
+  border-color: rgb(0, 68, 156);
 }
 
-.shopingCartPlace .summaryAndBuy button{
+.shopingCartPlace .summaryAndBuy button {
   padding: 10px 20px;
-  background-color: red;
+  background-color: rgb(233, 82, 82);
   border: 2px solid black;
   width: 90%;
   margin-left: 5%;
 }
 
+.shopingCartPlace .summaryAndBuy div {
+  color: white;
+}
 
-
-
-
-
-
-aside{
+aside {
   /* background-color: green; */
+  margin-top: 75px;
   flex-basis: 39.0625vw;
 }
 
-.slider{
+.slider {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-.slider .img{
-  background: url('../img/banner0.jpg');
+.slider .img {
+  background: url("../img/banner0.jpg");
   background-size: 100%;
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 1;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-.slider .controller{
+.slider .controller {
   z-index: 2;
   position: absolute;
   bottom: 25px;
@@ -201,7 +225,7 @@ aside{
   justify-content: center;
 }
 
-.slider .controller div{
+.slider .controller div {
   width: 10px;
   height: 10px;
   border: 5px solid black;
@@ -212,17 +236,15 @@ aside{
   box-shadow: 0 0 15px 5px black;
 }
 
-
-
-
-section{
+section {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border-bottom: 2px solid black; */
 }
 
-section button{
+section button {
   position: relative;
   background-color: rgb(9, 62, 105);
   color: white;
@@ -234,12 +256,12 @@ section button{
   height: 75px;
 }
 
-section button font{
+section button font {
   position: absolute;
   transform: translate(-50%, -50%);
 }
 
-section button::after{
+section button::after {
   position: absolute;
   content: "";
   display: block;
@@ -248,18 +270,18 @@ section button::after{
   border: 2px solid black;
   border-radius: 10px;
   transform: translate(2px, -47px);
-  transition: .5s;
+  transition: 0.5s;
 }
 
-section button:hover::after{
+section button:hover::after {
   transform: translate(-8px, -37px);
 }
 
-section button:active::after{
+section button:active::after {
   border-color: red;
 }
 
-section button::before{
+section button::before {
   content: "Zobacz produkty";
   position: absolute;
   display: block;
@@ -272,30 +294,26 @@ section button::before{
   left: 0;
   width: 146px;
   height: 0;
-  transition: height .3s;
+  transition: height 0.3s;
 }
 
-section button:active::after{
-  transition: height .2s;
+section button:active::after {
+  transition: height 0.2s;
   height: 100%;
 }
 
-section button:active::before{
+section button:active::before {
   /* border-color: white; */
   /* color: black; */
   /* background-color: black; */
 }
 
-
-
-
-
-main{
+main {
   min-height: 100vh;
   background-color: rgb(80, 72, 76);
 }
 
-.productList{
+.productList {
   padding-top: 10px;
   background-color: rgb(216, 69, 69);
   display: grid;
@@ -306,9 +324,8 @@ main{
   gap: 50px;
 }
 
-
-.product{
-  grid-column: 2/span 1;
+.product {
+  grid-column: 2 / span 1;
   /* grid-column: 1/10; */
   position: relative;
   width: 400px;
@@ -320,38 +337,38 @@ main{
   z-index: 4;
 }
 
-@media (min-width: 800px){
-  .productList{
+@media (min-width: 800px) {
+  .productList {
     grid-template-columns: repeat(auto-fit);
     /* gap: 100px; */
   }
 
-  .product{
+  .product {
     width: 200px;
     height: 250px;
     grid-column: auto;
     justify-self: center;
   }
 }
-@media (min-width: 1100px){
-  .productList{
+@media (min-width: 1100px) {
+  .productList {
     grid-template-columns: repeat(auto-fit);
     /* gap: 100px; */
   }
 
-  .product{
+  .product {
     width: 250px;
     height: 312.5px;
     grid-column: auto;
     justify-self: center;
   }
 }
-@media (min-width: 1920px){
-  .productList{
+@media (min-width: 1920px) {
+  .productList {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .product{
+  .product {
     width: 300px;
     height: 375px;
     grid-column: auto;
@@ -359,32 +376,32 @@ main{
   }
 }
 
-.product .image{
+.product .image {
   width: 100%;
   height: 80%;
   background-color: white;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
 }
 
-.product .image img{
+.product .image img {
   width: 100%;
 }
 
-.product .description{
+.product .description {
   background: violet;
-  transition: .5s;
+  transition: 0.5s;
   text-align: center;
   height: 10%;
 }
 
-.product .price{
+.product .price {
   height: 10%;
   background: yellow;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.product button{
+.product button {
   z-index: 3;
   position: absolute;
   top: 50%;

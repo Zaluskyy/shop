@@ -5,15 +5,24 @@ import GoDown from './GoDown'
 import ProductsPlace from './ProductsPlace'
 import { useState } from 'react';
 
+window.addEventListener("scroll", (e)=>{
+  if(window.pageYOffset>75){
+    document.querySelector(".header").style.height="50px"
+  }
+  else{
+    document.querySelector(".header").style.height="75px"
+  }
+})
+
 function App() {
   const [ shoppingCartItems, setShoppingCartItems ] = useState([])
+  const [ searchChars, setSearchChars ] = useState('')
 
 
   const handleAddToShoppingCart = (id, name, price, count=1)=>{
     const index = shoppingCartItems.findIndex(item=>{
       return item.id===id
     })
-    // console.log(index);
     if(index===-1){
       setShoppingCartItems(
         [
@@ -27,11 +36,6 @@ function App() {
         ]
       )
   } else{
-    // setShoppingCartItems(prev =>{
-    //   const newArray = [...shoppingCartItems]
-    //   newArray[index].count = newArray[index].count +1
-    //   return newArray
-    // })
     let newArr = shoppingCartItems
     newArr[index].count = newArr[index].count+1
     setShoppingCartItems([...newArr])
@@ -39,30 +43,30 @@ function App() {
   }
 
   const handleShoppingCartCount = (type, id)=>{
-    console.log(id);
     if(type==="SUBTRACTION"){
       if(shoppingCartItems[id].count<=0)return
       let newArr = shoppingCartItems
         newArr[id].count = newArr[id].count-1
-        console.log(newArr);
         setShoppingCartItems([...newArr])
     }else{
       let newArr = shoppingCartItems
       newArr[id].count = newArr[id].count+1
-      console.log(newArr);
       setShoppingCartItems([...newArr])
     }
   }
 
+  const handleFindProduct = (value)=>{
+    setSearchChars(value)
+  }
 
-    // console.log(shoppingCartItems);
   return (
     <div className="App">
       <div className="firstPage">
-        <header>
+        <header className="header">
           <TopPanel 
           shoppingCartItems={shoppingCartItems}
           handleShoppingCartCount={handleShoppingCartCount}
+          handleFindProduct={handleFindProduct}
           />
         </header>
         <aside>
@@ -74,7 +78,8 @@ function App() {
       </div>
       <main>
         <ProductsPlace 
-        addToShoppingCart={handleAddToShoppingCart} 
+        addToShoppingCart={handleAddToShoppingCart}
+        searchChars={searchChars}
         />
       </main>
     </div>

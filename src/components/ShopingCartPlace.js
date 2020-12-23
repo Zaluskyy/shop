@@ -5,6 +5,11 @@ import React from 'react';
 
 const ShopingCartPlace = ({shoppingCartItems, handleShoppingCartCount}) => {
 
+    let totalAmmount = 0
+    shoppingCartItems.forEach(item=>{
+        totalAmmount = totalAmmount + item.price*item.count
+    })
+
     const shoppingCartItem = shoppingCartItems.map((item, index)=>(
         <div className="itemContainer" key={item.id} >
             <div className="itemName">{item.name}</div>
@@ -20,8 +25,8 @@ const ShopingCartPlace = ({shoppingCartItems, handleShoppingCartCount}) => {
         <div className="shopingCartPlace">
             {shoppingCartItem}
             <div className="summaryAndBuy">
-                {/* <div>Łączna kwota: <span>0</span>zł</div> */}
-                {/* <button>Przejdź do kasy</button> */}
+                <div>Łączna kwota: <span>{totalAmmount.toFixed(2)}</span>zł</div>
+                <button>Przejdź do kasy</button>
             </div>
         </div>
      );

@@ -7,11 +7,13 @@ import {items} from './products.json'
 //xd
 import img from '../img/premix_xd.jpg'
 
-// console.log(items);
 
-const ProductsPlace = ({addToShoppingCart}) => {
+const ProductsPlace = ({addToShoppingCart, searchChars}) => {
 
-    const products = items.map((item, key)=>(
+
+    const itemsFiltered = items.filter(item=>item.name.toUpperCase().includes(searchChars.toUpperCase()))
+
+    const products = itemsFiltered.map((item, key)=>(
         <Product 
         key={key} 
         id={item.id} 

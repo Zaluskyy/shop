@@ -9,7 +9,6 @@ const Product = ({ id, name, image, price, addToShoppingCart }) => {
     const opacityHover = .5
 
     const handleHoverBtn = (e)=>{
-        // console.log(e.type);
         if(e.type==="mouseleave"){
             setIsOn(false)
         } 

@@ -4,7 +4,7 @@ const GoDown = () => {
 
     const showProducts = ()=>{
         window.scrollTo({
-            top: window.innerHeight,
+            top: window.innerHeight-50,
             behavior: "smooth"
         })
     }

@@ -4,7 +4,7 @@ import logo from '../img/logo2.png'
 import Menu from './Menu'
 import Menu2 from './Menu2'
 
-const TopPanel = ({shoppingCartItems,handleShoppingCartCount}) => {
+const TopPanel = ({shoppingCartItems,handleShoppingCartCount, handleFindProduct}) => {
     return ( 
         <div className="TopPanel">
             <img src={logo} alt="logo" />
@@ -15,6 +15,7 @@ const TopPanel = ({shoppingCartItems,handleShoppingCartCount}) => {
                 <Menu2 
                 shoppingCartItems={shoppingCartItems}
                 handleShoppingCartCount={handleShoppingCartCount}
+                handleFindProduct={handleFindProduct}
                 />
             </div>
         </div>
