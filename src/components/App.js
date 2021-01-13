@@ -3,7 +3,9 @@ import TopPanel from './TopPanel'
 import Slider from './Slider'
 import GoDown from './GoDown'
 import ProductsPlace from './ProductsPlace'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import {ShopingCartProvider} from './ShopingCartContext.js'
+import {ShopingCartContext} from './ShopingCartContext'
 
 window.addEventListener("scroll", (e)=>{
   if(window.pageYOffset>75){
@@ -15,7 +17,8 @@ window.addEventListener("scroll", (e)=>{
 })
 
 function App() {
-  const [ shoppingCartItems, setShoppingCartItems ] = useState([])
+  // const [ shoppingCartItems, setShoppingCartItems ] = useState([]) //!!!dałem do kontekstu!!!
+  const [ shoppingCartItems, setShoppingCartItems ] = useContext(ShopingCartContext)
   const [ searchChars, setSearchChars ] = useState('')
 
 
@@ -60,6 +63,7 @@ function App() {
   }
 
   return (
+    <ShopingCartProvider>
     <div className="App">
       <div className="firstPage">
         <header className="header">
@@ -83,6 +87,7 @@ function App() {
         />
       </main>
     </div>
+     </ShopingCartProvider>
   );
 }
 
